@@ -125,3 +125,6 @@ screenfetch
 # added by Anaconda3 installer
 export PATH="/home/tomas/.anaconda3/bin:$PATH"
 export TERM="linux"
+
+# added by Miniconda3 installer
+export PATH="/home/tomas/Programs/miniconda3/bin:$PATH"

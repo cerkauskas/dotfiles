@@ -8,4 +8,5 @@ if [ -z "$MAIN_DIR" ] ; then
   exit 1  # fail
 fi
 
+ln -s "$MAIN_DIR/i3" ~/.config/i3
 ln -s "$MAIN_DIR/vim/.vimrc" ~/.vimrc
