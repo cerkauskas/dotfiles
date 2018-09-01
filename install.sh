@@ -8,4 +8,4 @@ if [ -z "$MAIN_DIR" ] ; then
   exit 1  # fail
 fi
 
-ln -s "$MAIN_DIR/.bashrc" ~/.bashrc
+ln -s "$MAIN_DIR/vim/.vimrc" ~/.vimrc
