@@ -10,3 +10,4 @@ fi
 
 ln -s "$MAIN_DIR/i3" ~/.config/i3
 ln -s "$MAIN_DIR/vim/.vimrc" ~/.vimrc
+ln -s "$MAIN_DIR/Xresources" ~/.Xresources
