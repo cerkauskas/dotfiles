@@ -8,6 +8,32 @@ if [ -z "$MAIN_DIR" ] ; then
   exit 1  # fail
 fi
 
-ln -s "$MAIN_DIR/i3" ~/.config/i3
-ln -s "$MAIN_DIR/vim/.vimrc" ~/.vimrc
-ln -s "$MAIN_DIR/Xresources" ~/.Xresources
+HOME_DIR=$( getent passwd "$USER" | cut -d: -f6 )
+
+# sources relative to MAIN_DIR
+SOURCES=(
+  "i3/config"
+  "vim/.vimrc"
+  "Xresources"
+  "zsh/zshrc"
+)
+# destinations relative to home folder (~)
+DESTINATIONS=(
+  ".config/i3"
+  ".vimrc"
+  ".Xresources"
+  ".zshrc"
+)
+
+for index in ${!SOURCES[@]}; do
+  source="$MAIN_DIR/${SOURCES[$index]}"
+  destination="$HOME_DIR/${DESTINATIONS[$index]}"
+
+  # Does symlink exist?
+  if [ -L $destination ]; then
+    echo "$destination already exists"
+  else
+    ln -s $source $destination
+    echo "$destination symlinked"
+  fi
+done
