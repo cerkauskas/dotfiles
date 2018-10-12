@@ -39,6 +39,9 @@ bindsym $mod+Return exec urxvt
 # kill focused window
 bindsym $mod+Shift+q kill
 
+
+bindsym $mod+m move workspace to output left
+
 # start a program launcher
 bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 460 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -50,7 +53,7 @@ bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 460 -opaci
 bindsym $mod+shift+x exec $SCRIPT_DIR/lock
 
 # print screen
-bindsym Print exec gnome-screenshot -i
+bindsym Print exec deepin-screenshot
 
 # change focus
 bindsym $mod+j focus left
@@ -125,6 +128,12 @@ bindsym $mod+leftdoublequotemark workspace $w0
 bindsym $mod+1 workspace $w1
 bindsym $mod+2 workspace $w2
 bindsym $mod+3 workspace $w3
+bindsym $mod+4 workspace $w4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace $w9
 bindsym $mod+0 workspace $w0 
 
 # move focused container to workspace
@@ -139,12 +148,24 @@ bindsym $mod+Shift+umacron move container to workspace 8
 bindsym $mod+Shift+doublelowquotemark move container to workspace $w9
 bindsym $mod+Shift+leftdoublequotemark move container to workspace $w0
 
+bindsym $mod+Shift+1 move container to workspace $w1
+bindsym $mod+Shift+2 move container to workspace $w2
+bindsym $mod+Shift+3 move container to workspace $w3
+bindsym $mod+Shift+4 move container to workspace $w4
+bindsym $mod+Shift+5 move container to workspace $w5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace $w9
+bindsym $mod+Shift+0 move container to workspace $w0
+
+
 assign [class="Firefox"] $w2
 assign [class="Google-chrome"] $w2
 assign [class="jetbrains-webstorm"] $w3
 assign [class="jetbrains-pycharm"] $w3
 assign [class="jetbrains-phpstorm"] $w3
-assign [class="rstudio"] $w3
+assign [class="Rstudio"] $w3
 assign [class="Evince"] $w4
 assign [class="vlc"] $w5
 assign [class="Toggl Desktop"] $w9
@@ -241,3 +262,4 @@ bindsym XF86TouchpadToggle exec /home/tomas/.config/i3/toggletouchpad.sh # toggl
 
 exec feh --bg-scale $IMAGE_DIR/wallpaper.jpg
 exec compton -f
+exec_once slack
