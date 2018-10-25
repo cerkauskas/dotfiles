@@ -3,6 +3,8 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/tomas/.oh-my-zsh"
+export ZSH_CONFIG="/home/tomas/.dotfiles/zsh"
+export PYTHONPATH="${PYTHONPATH}:/home/tomas/Dev/python-libs"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -95,11 +97,4 @@ export PATH="/home/tomas/Programs/miniconda3/bin:$PATH"
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+source $ZSH_CONFIG/aliases
