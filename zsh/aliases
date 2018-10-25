@@ -1,0 +1,4 @@
+alias sa="source activate"
+alias sd="source deactivate"
+alias ls="ls -lh"
+alias jn="jupyter notebook"
