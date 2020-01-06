@@ -160,7 +160,7 @@ bindsym $mod+Shift+9 move container to workspace $w9
 bindsym $mod+Shift+0 move container to workspace $w0
 
 
-assign [class="Firefox"] $w2
+assign [class="firefox"] $w2
 assign [class="Google-chrome"] $w2
 assign [class="jetbrains-webstorm"] $w3
 assign [class="jetbrains-pycharm"] $w3
