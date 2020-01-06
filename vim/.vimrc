@@ -25,11 +25,14 @@ call vundle#begin('~/.vim')
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-scripts/pythoncomplete.vim'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
+Plugin 'fatih/vim-go'
+Plugin 'google/vim-jsonnet'
 " Plugin 'jnurmine/Zenburn'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+"Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 call vundle#end()
 filetype plugin indent on
@@ -50,3 +53,6 @@ syntax on
 
 " colorscheme zenburn
 let g:ycm_python_binary_path = 'python'
+
+" yaml stuff
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
