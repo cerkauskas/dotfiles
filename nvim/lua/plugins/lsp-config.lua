@@ -35,6 +35,13 @@ return {
 
 		-- todo: add barbar plugin to show multiple files at the top. just like goland.
 	},
+  {
+    "lspcontainers/lspcontainers.nvim",
+    dependencies = { "neovim/nvim-lspconfig" },
+    config = function()
+
+    end
+  },
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
@@ -69,6 +76,13 @@ return {
 					},
 				},
 			})
+
+      local pylspcmd = require('lspcontainers').command('pylsp', {
+        image = "cerkauskas/pylsp:latest"
+      })
+      lspconfig.pylsp.setup({
+        cmd = pylspcmd,
+      })
 			lspconfig.gopls.setup({})
 			lspconfig.starpls.setup({
 				filetypes = { "starlark", "bzl", "bazel", "star", "eslint" },
