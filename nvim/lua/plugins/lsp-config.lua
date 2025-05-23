@@ -78,7 +78,7 @@ return {
 			})
 
       local pylspcmd = require('lspcontainers').command('pylsp', {
-        image = "cerkauskas/pylsp:latest"
+        image = "thecherka/pylsp:latest"
       })
       lspconfig.pylsp.setup({
         cmd = pylspcmd,
