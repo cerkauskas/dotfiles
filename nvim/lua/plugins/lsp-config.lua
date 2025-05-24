@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "gopls", "starpls", "yamlls", "eslint", 'tailwindcss', 'ts_ls', 'jsonls' },
+				ensure_installed = { "gopls", "starpls", "yamlls", "eslint", 'tailwindcss', 'ts_ls', 'jsonls' },
 			})
 		end,
 	},
@@ -45,8 +45,10 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
+      local lspconfig = require("lspconfig")
+      local lspcontainers = require("lspcontainers")
 			local configs = require("lspconfig.configs")
-			local util = require("lspconfig.util")
+			local util  = require("lspconfig.util")
 
 			configs.protobuf_language_server = {
 				default_config = {
@@ -64,9 +66,9 @@ return {
 				},
 			}
 
-			local lspconfig = require("lspconfig")
 			vim.lsp.log_level = vim.log.levels.DEBUG
 			lspconfig.lua_ls.setup({
+        cmd = lspcontainers.command("lua_ls"),
 				settings = {
 					Lua = {
 						diagnostics = {
