@@ -83,6 +83,11 @@ return {
       lspconfig.pylsp.setup({
         cmd = pylspcmd,
       })
+
+      lspconfig.nil_lsp.setup({
+        cmd = require('lspcontainers').command('nil', {image = "thecherka/nil-lsp:latest"})
+      })
+
 			lspconfig.gopls.setup({})
 			lspconfig.starpls.setup({
 				filetypes = { "starlark", "bzl", "bazel", "star", "eslint" },
