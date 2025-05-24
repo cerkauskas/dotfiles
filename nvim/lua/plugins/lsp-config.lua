@@ -21,7 +21,7 @@ return {
       local null_ls = require("null-ls")
 
       local stylua = null_ls.builtins.formatting.stylua;
-      stylua.generator_opts.command = "docker run johnnymorganz/stylua --"
+      stylua.command = "docker run johnnymorganz/stylua --"
       null_ls.setup({
         sources = {
           -- todo: somehow mason should be configured to automatically install this. I installed it through mason UI.
