@@ -84,7 +84,7 @@ return {
         cmd = pylspcmd,
       })
 
-      lspconfig.nil_lsp.setup({
+      lspconfig.nil_ls.setup({
         cmd = require('lspcontainers').command('nil', {image = "thecherka/nil-lsp:latest"})
       })
 
